@@ -1,14 +1,22 @@
 # 📁 File Upload Server (Express + Multer + EJS)
 
-This project sets up a basic file upload server using **Node.js**, **Express**, **Multer**, and **EJS**. It allows users to upload files through a browser and supports HTTP port forwarding using [LocalToNet](https://localtonet.com).
+## 🔓 LEAK-FILE
+
+> ⚠️ For educational and learning purposes only. This project demonstrates a basic file upload server. Be responsible—use this knowledge to learn, not to harm.
+
+This project sets up a simple file upload server using **Node.js**, **Express**, **Multer**, and **EJS**. You can upload files through a web form and access them using a shared link.
 
 ---
 
-## 🖼️ Preview
+## ⚙️ Requirements
 
-![Upload Page Preview](http://raw.githubusercontent.com/securi3ytalent/LEAK-FILE/refs/heads/main/LEAK-FILE-POC.png)
+- Node.js (v14+ recommended)
 
-## 🛠️ Installation
+---
+
+## 🚀 How to Start the Server
+
+### Step 1: Install Dependencies
 
 ```bash
 npm init -y
