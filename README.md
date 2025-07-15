@@ -4,6 +4,10 @@ This project sets up a basic file upload server using **Node.js**, **Express**, 
 
 ---
 
+## 🖼️ Preview
+
+![Upload Page Preview](http://raw.githubusercontent.com/securi3ytalent/LEAK-FILE/refs/heads/main/LEAK-FILE-POC.png)
+
 ## 🛠️ Installation
 
 ```bash
