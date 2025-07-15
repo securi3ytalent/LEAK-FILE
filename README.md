@@ -2,7 +2,7 @@
 
 ## 🔓 LEAK-FILE
 
-FILE Download Through A Link, Practices and Learning Purpose, This is Just A Idea, Do Your Creativity and Make More Evil. This project sets up a simple file upload server using **Node.js**, **Express**, **Multer**, and **EJS**.
+Victim computer File Download Through A Link, Practices and Learning Purpose, This is Just A Idea, Do Your Creativity and Make More Evil. This project sets up a simple file upload server using **Node.js**, **Express**, **Multer**, and **EJS**.
 
 
 > ⚠️ For educational and learning purposes only. This project demonstrates a basic file upload server. Be responsible—use this knowledge to learn, not to harm.
