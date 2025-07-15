@@ -28,5 +28,5 @@ FILE Download Through A Link, Practices and Learning Purpose, This is Just A Ide
 ### Step 1: Install Dependencies
 
 ```bash
-npm init -y
+npm i
 npm install express multer ejs
