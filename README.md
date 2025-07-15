@@ -29,4 +29,4 @@ FILE Download Through A Link, Practices and Learning Purpose, This is Just A Ide
 
 ```bash
 npm i
-npm install express multer ejs
+
